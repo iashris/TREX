@@ -1,6 +1,6 @@
-the trex runner game extracted from chrome offline err page.
+the trex runner game extracted from chrome offline err page with voice functionality.
 
 
-[go and enjoy! :smile: ](http://wayou.github.io/t-rex-runner/)
+[go and enjoy! :smile: ](http://iashris.github.io/TREX/)
 
 ![chrome offline game cast](assets/screenshot.gif)
