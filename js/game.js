@@ -2518,14 +2518,18 @@ Horizon.prototype = {
 //start the game
 new Runner('.interstitial-wrapper');
   var mic;
-
+  boo=0;
+summer=0;
   mic = new p5.AudioIn()
   mic.start();
 
   function draw(){
-  
+  while(boo<10){
+summer+=mic.getLevel();
+boo++;
+  }
 
-  if(mic.getLevel()>0.028){
+  if(mic.getLevel()>0.025+summer/10){
     
     eventx = new Event('keydown');
       eventx.keyCode = 32;//keys(Runner.keycodes.JUMP)[0];
