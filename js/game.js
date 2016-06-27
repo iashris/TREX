@@ -113,7 +113,7 @@ Runner.config = {
   CLEAR_TIME: 3000,
   CLOUD_FREQUENCY: 0.5,
   GAMEOVER_CLEAR_TIME: 750,
-  GAP_COEFFICIENT: 0.6,
+  GAP_COEFFICIENT: 1.2,
   GRAVITY: 0.6,
   INITIAL_JUMP_VELOCITY: 12,
   MAX_CLOUDS: 6,
@@ -197,9 +197,9 @@ Runner.sounds = {
  * @enum {Object}
  */
 Runner.keycodes = {
-  JUMP: {'38': 1, '32': 1},  // Up, spacebar
+  JUMP: {'308': 1, '302': 1},  // Up, spacebar
   DUCK: {'40': 1},  // Down
-  RESTART: {'13': 1}  // Enter
+  RESTART: {'302': 1}  // Enter
 };
 
 
@@ -676,8 +676,7 @@ Runner.prototype = {
         }
       }
 
-      if (this.crashed && e.type == Runner.events.TOUCHSTART &&
-          e.currentTarget == this.containerEl) {
+      if (this.crashed && (e.type == Runner.events.TOUCHSTART|| e.type == Runner.events.GAMEPADCONNECTED)) {
         this.restart();
       }
     // }
@@ -1498,7 +1497,7 @@ function Trex(canvas, spritePos) {
  */
 Trex.config = {
   DROP_VELOCITY: -5,
-  GRAVITY: 0.8,
+  GRAVITY: 0.6,
   HEIGHT: 47,
   HEIGHT_DUCK: 25,
   INIITAL_JUMP_VELOCITY: -10,
@@ -2529,10 +2528,10 @@ summer+=mic.getLevel();
 boo++;
   }
 
-  if(mic.getLevel()>0.025+summer/10){
+  if(mic.getLevel()>0.027+summer/10){
     
     eventx = new Event('keydown');
-      eventx.keyCode = 32;//keys(Runner.keycodes.JUMP)[0];
+      eventx.keyCode = 302;//keys(Runner.keycodes.JUMP)[0];
       eventx.which = eventx.keyCode;
       document.dispatchEvent(eventx);
   }
